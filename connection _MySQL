@@ -1,7 +1,0 @@
-import pymysql
-conn = pymysql.connect(host='$$$$$$$$',port=3306,user='$$$$$$$',passwd='$$$$$$',charset='utf8',db='scuaatw_WPREK')
-cursor=conn.cursor()
-cursor.execute("Select VERSION()")
-data=cursor.fetchone()
-print("Database Version: %s" %data)
-conn.close
