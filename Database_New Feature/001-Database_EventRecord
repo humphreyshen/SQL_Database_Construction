@@ -1,0 +1,42 @@
+SELECT
+DISTINCT event_name,
+zh_name,
+email,
+cell,
+tele,
+id_num,
+event_id,
+event_year,
+event_price
+FROM(SELECT
+    T.event_id,
+    T.zh_name,
+    T.email,
+    T.event_year,
+    T.event_name,
+    T.event_price,
+    dDt_alumnidb_personal.cell,
+    dDt_alumnidb_personal.tele,
+    dDt_alumnidb_personal.id_num
+    FROM (SELECT
+     		dDt_alumnidb_event_participant.event_id,
+     		dDt_alumnidb_event_participant.id,
+     		dDt_alumnidb_event_participant.zh_name,
+     		dDt_alumnidb_event_participant.email,
+     		dDt_alumnidb_event.event_year,
+        dDt_alumnidb_event.event_name,
+        dDt_alumnidb_event.event_price
+     		FROM dDt_alumnidb_event_participant
+     		INNER JOIN dDt_alumnidb_event
+     		ON dDt_alumnidb_event.event_id=dDt_alumnidb_event_participant.event_id
+    		WHERE 
+				(dDt_alumnidb_event_participant.zh_name LIKE '')OR
+				(dDt_alumnidb_event.event_id='')OR
+				(dDt_alumnidb_event.event_year='')OR
+				(dDt_alumnidb_event_participant.zh_name LIKE '' AND dDt_alumnidb_event.event_id='' ) OR 
+				(dDt_alumnidb_event_participant.zh_name LIKE '' AND dDt_alumnidb_event.event_year='') OR
+				(dDt_alumnidb_event_participant.zh_name LIKE '' AND dDt_alumnidb_event.event_id='' AND dDt_alumnidb_event.event_year='')
+          	) As T
+    INNER JOIN dDt_alumnidb_personal
+    ON dDt_alumnidb_personal.zh_name=T.zh_name OR dDt_alumnidb_personal.email=T.email) AS A
+;
