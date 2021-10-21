@@ -7,16 +7,16 @@ CREATE TABLE dDt_alumnidb_personal(
     age VARCHAR(11),
     email VARCHAR(100),
     zip_code VARCHAR(10),
-		region VARCHAR(30),
-		county VARCHAR(30),
-		district VARCHAR(30),
+    region VARCHAR(30),
+    county VARCHAR(30),
+    district VARCHAR(30),
     address VARCHAR(200),
     cell VARCHAR(200),
     tele VARCHAR(200),
     id_num VARCHAR (15),
-		last_edit DATETIME(6),
-		bye TINYINT(1) NOT NULL,
-		note TEXT,	
+    last_edit DATETIME(6),
+    bye TINYINT(1) NOT NULL,
+    note TEXT,	
 PRIMARY KEY (id)
 );
 
@@ -28,7 +28,7 @@ CREATE TABLE dDt_alumnidb_academic(
     school VARCHAR (15),
     dept VARCHAR (15),
     class VARCHAR (20),
-		liasion TINYINT(1),
+    liasion TINYINT(1),
     s_no INT(20) UNSIGNED AUTO_INCREMENT,
 PRIMARY KEY (s_no)
  );
@@ -37,7 +37,7 @@ PRIMARY KEY (s_no)
     event_id INT(10) UNSIGNED AUTO_INCREMENT,
     event_year YEAR (4),
     event_name VARCHAR (30),
-	  event_price CHAR (5),
+    event_price CHAR (5),
     PRIMARY KEY (event_id)
 );
 
