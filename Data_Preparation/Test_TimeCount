@@ -1,8 +1,0 @@
-hour = int(input("Starting time (hours): "))
-mins = int(input("Starting time (minutes): "))
-dura = int(input("Event duration (minutes): "))
-
-add_hours = int(((mins+dura)/60))
-add_mins = int((mins+dura%60)-60)
-
-print("The End Time is:", int((hour+add_hours)%24) ,":", add_mins )
