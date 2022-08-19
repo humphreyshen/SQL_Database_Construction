@@ -1,4 +1,4 @@
-CREATE TABLE dDt_alumnidb_personal(
+CREATE TABLE TableName_personal(
     id INT(10) unsigned AUTO_INCREMENT,
     zh_name VARCHAR (10),
     en_name VARCHAR (30),
@@ -20,7 +20,7 @@ CREATE TABLE dDt_alumnidb_personal(
 PRIMARY KEY (id)
 );
 
-CREATE TABLE dDt_alumnidb_academic(
+CREATE TABLE TableName_academic(
     id INT (10),
     alumni_id VARCHAR(15),
     atta VARCHAR(10),
@@ -33,7 +33,7 @@ CREATE TABLE dDt_alumnidb_academic(
 PRIMARY KEY (s_no)
  );
  
- CREATE TABLE dDt_alumnidb_event(
+CREATE TABLE TableName_event(
     event_id INT(10) UNSIGNED AUTO_INCREMENT,
     event_year YEAR (4),
     event_name VARCHAR (30),
@@ -41,19 +41,19 @@ PRIMARY KEY (s_no)
     PRIMARY KEY (event_id)
 );
 
-CREATE TABLE dDt_alumnidb_event_participant(
+CREATE TABLE TableName_event_participant(
     event_id INT(10),
     id INT(10),
     zh_name VARCHAR(100),
     email VARCHAR(200)
 );
 
-CREATE TABLE dDt_alumnidb_atta_id(
+CREATE TABLE TableName_atta_id(
 atta VARCHAR(5),
 atta_name VARCHAR(20)
 );
 
-CREATE TABLE dDt_alumnidb_schooldept_id(
+CREATE TABLE TableName_schooldept_id(
 	schooldept_id VARCHAR (3),
 	school_id VARCHAR (2),
 	dept_id VARCHAR (2),
@@ -61,19 +61,19 @@ CREATE TABLE dDt_alumnidb_schooldept_id(
 	dept_name VARCHAR (30)
 );
 
-CREATE TABLE dDt_alumnidb_zipcode(
+CREATE TABLE TableName_zipcode(
 	zip_code CHAR(5),
 	zip_code_countyname VARCHAR(10),
 	zip_code_districtname VARCHAR(10)
 );
 
-CREATE TABLE dDt_alumnidb_region(
+CREATE TABLE TableName_region(
 	region_code VARCHAR(3),
   region_name VARCHAR(11),
 	region_cont VARCHAR(3)
 );
 
-CREATE TABLE dDt_alumnidb_city(
+CREATE TABLE TableName_city(
 	city_id VARCHAR(5),
 	city_name VARCHAR (20)
 );
